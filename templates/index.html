@@ -58,8 +58,11 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 </div> 
 </div>
 <form action="" method="post">
-    Введите почту: <input type="mail" name="mail">
-    Введите текст: <input type="text" name="text">
+    Введите почту: <input type="mail" name="mail"><br />
+    {% if data %}
+        <span><font color="red">{{data}}</font></span><br/>
+    {% endif %}
+    Введите текст: <input type="text" name="text"><br />
     <button type="submit">Отправить</button>
 </form>
  <div id="copywriteblock"> Designed by <a href="http://www.pixelateddesign.co.uk/">www.pixelateddesign.co.uk </a></div>
