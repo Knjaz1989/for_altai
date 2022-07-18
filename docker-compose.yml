@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  backend:
+    build: .
+    image: altai
+    container_name: altai
+    restart: always
+    depends_on:
+      - redis
+    ports:
+      - "80:80"

@@ -1,9 +1,8 @@
-import smtplib
-import os
-from email.message import EmailMessage
 from dotenv import load_dotenv
 from flask import render_template, request
-from app import application
+from app import application, celery
+from mail import sending
+import os
 
 load_dotenv()
 
@@ -12,36 +11,19 @@ def show_page():
     return render_template("index.html")
 
 
-def send_to_user(from_, password, to, subject, content):
-    msg = EmailMessage()
-    msg.set_content(content)
-    msg['Subject'] = subject
-    msg['From'] = from_
-    msg['To'] = to
-    s = smtplib.SMTP(host='smtp.mail.ru', port=25)
-    s.starttls()
-    s.ehlo()
-    s.login(from_, password)
-    s.send_message(msg)
-    s.quit()
-
-
+# @celery.task
 def send_mail():
-    LOGIN = os.getenv("LOGIN")
-    PASSWORD = os.getenv("PASSWORD")
     user_mail = request.form['mail'].lower()
     text = request.form['text']
-    address_list = [
-        [user_mail, "Заявка на перевод", "Ваша заявка принята"],
-        [LOGIN, "Новая заявка", text]
-    ]
-    data = None
-    for item in address_list:
-        try:
-            send_to_user(LOGIN, PASSWORD, item[0], item[1], item[2])
-        except Exception as err:
-            data = "Неверный адрес электронной почты"
-            break
+    files = request.files.getlist("files")
+    login = os.getenv("LOGIN")
+    password = os.getenv("PASSWORD")
+    files_dict = {}
+    for file in files:
+        if file.filename:
+            byte_string = file.stream.read()
+            files_dict[file.filename] = byte_string.decode()
+    data = sending.delay(login, password, user_mail, text, files_dict)
     return render_template("index.html", data=data)
 
 
