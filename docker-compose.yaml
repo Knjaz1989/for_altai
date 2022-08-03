@@ -12,7 +12,7 @@ services:
     env_file:
       - db.env
     ports:
-      - '27018:27017'
+      - '27017:27017'
     networks:
       - mongonetwork
 
@@ -27,7 +27,7 @@ services:
       - mail.env
       - db.env
     ports:
-      - '81:80'
+      - '80:80'
     depends_on:
       - db
     networks:
