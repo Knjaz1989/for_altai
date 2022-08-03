@@ -41,5 +41,5 @@ application.add_routes([
     web.get('/admin', get_from_base),
     web.post('/admin', save_to_base),
     #Регистрируем маршрут, чтобы отдавать статику
-    web.static('/static', "site/static")
+    web.static('/static', "/static")
 ])

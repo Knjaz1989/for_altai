@@ -7,4 +7,4 @@ from aiohttp import web
 application = web.Application(client_max_size=1024**2*50) # 50mbytes
 
 # Init rendering
-aiohttp_jinja2.setup(application, loader=jinja2.FileSystemLoader('./site/templates'))
+aiohttp_jinja2.setup(application, loader=jinja2.FileSystemLoader('templates'))
