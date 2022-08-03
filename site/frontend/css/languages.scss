@@ -1,0 +1,66 @@
+@import './typography.scss';
+@import './media.scss';
+
+.languages {
+  color: $color-text;
+  margin-bottom: 80px;
+
+  @media(min-width:320px) and (max-width:767.98px) {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    @include font-roboto-bold-48;
+    text-align: center;
+    line-height: 100%;
+    margin-bottom: 40px;
+
+    @media(min-width:320px) and (max-width:767.98px) {
+      font-size: 2.4em;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__wrap {
+    margin-bottom: 20px;
+
+    @media (max-width: 575.98px) {
+      column-count: 2;
+    }
+
+    @media (min-width: 576px) and (max-width: 991.98px) {
+      column-count: 3;
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      column-count: 4;
+    }
+
+    @media (min-width: 1200px) {
+      column-count: 5;
+    }
+  }
+
+  &__item {
+    @include font-roboto-reg-20;
+    color: $color-text;
+    line-height: 192%;
+
+    @media(min-width:320px) and (max-width:767.98px) {
+      font-size: 1.4em;
+      line-height: 195%;
+    }
+  }
+
+  &__banner {
+    text-align: center;
+    @include font-roboto-reg-22;
+    color: $color-text;
+    line-height: 116%;
+
+    @media(min-width:320px) and (max-width:767.98px) {
+      font-size: 1.2em;
+      line-height: 164%;
+    }
+  }
+}

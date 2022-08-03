@@ -1,0 +1,93 @@
+@import "typography";
+@import './media.scss';
+
+.featuresTranslate {
+  text-align: center;
+  margin-bottom: 80px;
+
+  @media(min-width:320px) and (max-width:767.98px) {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    @include font-roboto-bold-48;
+    color: $color-text;
+    margin-bottom: 40px;
+
+    @media(min-width:550px) and (max-width:767.98px) {
+      font-size: 2.4em;
+      line-height: 121%;
+      margin-bottom: 20px;
+    }
+
+    @media(min-width:320px) and (max-width:549.98px) {
+      font-size: 2.4em;
+      line-height: 121%;
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    @include font-roboto-reg-20;
+    line-height: 100%;
+    color: $color-text;
+  }
+
+  button {
+    @include button-blue;
+  }
+
+  &__wrap {
+    @media (max-width: 767.98px) {
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    @media (max-width: 767.98px) {
+      display: flex;
+      margin-top: 22px;
+
+      &_text {
+        text-align: left;
+        margin-left: 22px;
+      }
+
+      align-items: center;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      width: 50%;
+
+      &:nth-child(n+3) {
+        margin-top: 68px;
+      }
+
+      &_text {
+        margin-top: 28px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      width: 25%;
+
+      &:nth-child(n+5) {
+        margin-top: 68px;
+      }
+
+      &_text {
+        margin-top: 28px;
+      }
+    }
+  }
+
+  img {
+    width: 64px;
+    height: 64px;
+  }
+}

@@ -1,0 +1,112 @@
+$color-footer: #c1d8f2;
+
+$color-text: rgba(2, 32, 51, 1);
+
+$color-white: rgba(255, 255, 255, 1);
+
+$color-button: #0B527D;
+
+$color-checkbox: #bddbff;
+
+$color-border: #3d9ae2;
+
+@mixin font-roboto-reg-14 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4em;
+  line-height: 150%;
+}
+
+// добавил, т.к. часто встречается:
+@mixin font-roboto-reg-16 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6em;
+  line-height: 150%;
+}
+
+@mixin font-roboto-reg-20 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 150%;
+}
+
+@mixin font-roboto-reg-22 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2em;
+  line-height: 150%;
+}
+
+@mixin font-roboto-bold-24 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.4em;
+  line-height: 150%;
+}
+
+
+@mixin font-roboto-bold-24 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.4em;
+  line-height: 150%;
+}
+
+@mixin font-roboto-bold-48 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4.8em;
+  line-height: 150%;
+}
+
+@mixin button-blue {
+  @include font-roboto-bold-48;
+  font-size: 1.9em;
+  max-width: 460px;
+  width: 100%;
+  padding: 28px 145px;
+  background: $color-button;
+  color: $color-white;
+  border-radius: 50px;
+  text-align: center;
+  border: 1px solid #022033;
+  box-shadow: 20px 26px 32px 0px rgba(11, 82, 125, 0.28);
+
+}
+
+@mixin button-white {
+  @include font-roboto-bold-48;
+  font-size: 1.9em;
+  max-width: 340px;
+  width: 100%;
+  padding: 24px 84px;
+  background: $color-white;
+  color: $color-text;
+  text-align: center;
+  border-radius: 50px;
+
+
+}
+
+@mixin button-white {
+  @include font-roboto-bold-48;
+  font-size: 1.9em;
+  max-width: 340px;
+  width: 100%;
+  padding: 24px 84px;
+  background: $color-white;
+  color: $color-text;
+  text-align: center;
+  border-radius: 50px;
+
+
+}

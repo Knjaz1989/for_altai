@@ -1,0 +1,67 @@
+@import './typography.scss';
+@import './media.scss';
+
+.footer {
+  margin-bottom: 80px;
+  background-color: $color-footer;
+  height: 276px;
+
+  @media (max-width: 991.98px) {
+    height: auto;
+  }
+
+  padding-top: 32px;
+
+  &__wrap {
+    display: flex;
+    margin-bottom: 40px;
+
+
+    @media (max-width: 575.98px) {
+      flex-direction: column;
+    }
+  }
+
+  &__nav {
+    @media (max-width: 575.98px) {
+      margin-bottom: 40px;
+    }
+
+    color: $color-text;
+    width: 240px;
+    flex-shrink: 0;
+
+    &_item {
+      @include font-roboto-reg-14;
+      color: $color-text;
+      line-height: 100%;
+    }
+
+    &_item:nth-child(n+2) {
+      margin-top: 25px;
+    }
+  }
+
+  &__copyright {
+
+    @include font-roboto-reg-14;
+    color: $color-text;
+    line-height: 100%;
+  }
+
+  h2 {
+    @include font-roboto-bold-48;
+    color: $color-text;
+    margin-bottom: 60px;
+  }
+
+  p {
+    @include font-roboto-reg-14;
+    color: $color-text;
+    font-size: 1.2em;
+    line-height: 178%;
+  }
+
+
+
+}

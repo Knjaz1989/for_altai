@@ -1,0 +1,41 @@
+@import "typography";
+@import './media.scss';
+
+.discountOffer {
+  text-align: center;
+  margin-bottom: 80px;
+
+  @media(min-width:320px) and (max-width:767.98px) {
+    margin-bottom: 40px;
+  }
+
+
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    @include font-roboto-bold-48;
+    color: $color-text;
+    margin-bottom: 40px;
+
+    @media(min-width:320px) and (max-width:767.98px) {
+      font-size: 2.4em;
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    @include font-roboto-reg-22;
+    color: $color-text;
+    line-height: 116%;
+
+    @media(min-width:320px) and (max-width:767.98px) {
+      font-size: 1.4em;
+      line-height: 146%;
+    }
+  }
+}

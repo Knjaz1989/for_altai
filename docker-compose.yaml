@@ -1,0 +1,37 @@
+version: '3.8'
+
+networks:
+  mongonetwork:
+    driver: bridge
+
+services:
+  db:
+    image: mongo:focal
+    container_name: mongo
+    restart: unless-stopped
+    env_file:
+      - db.env
+    ports:
+      - '27018:27017'
+    networks:
+      - mongonetwork
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    image: altai
+    container_name: altai
+    restart: always
+    env_file:
+      - mail.env
+      - db.env
+    ports:
+      - '81:80'
+    depends_on:
+      - db
+    networks:
+      - mongonetwork
+
+
+

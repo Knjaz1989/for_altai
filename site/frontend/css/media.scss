@@ -1,0 +1,58 @@
+// ЭТО СТАРЫЕ - пока пусть поживут на всякий случай
+// До этого значения включительно - мобильные
+$breakpoint-small-low: 640px;
+// В этом диапазоне планшеты
+$breakpoint-small-high: 641px;
+$breakpoint-big-low: 1200px;
+// Это для десктопов
+$breakpoint-big-high: 1201px;
+
+// ЭТО НОВЫЕ НА ОСНОВЕ МИКСИНОВ НИЖЕ
+$breakpoint-xs-: 320px;
+$breakpoint-sm-low: 575.98px;
+$breakpoint-sm-high: 576px;
+$breakpoint-md-low: 767.98px;
+$breakpoint-md-high: 768px; //
+$breakpoint-lg-low: 991.98px;
+$breakpoint-lg-high: 992px; //
+$breakpoint-xl-low: 1199.98px;
+$breakpoint-xl-high: 1200px;
+$breakpoint-xxl-low: 1399.98px;
+$breakpoint-xxl-high: 1400px;
+
+/* @mixin xs {
+    @media (min-width: 320px) and (max-width: 575.98px) {
+        @content
+    }
+}
+
+@mixin sm {
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        @content
+    }
+}
+
+@mixin md {
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        @content
+    }
+}
+
+@mixin lg {
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        @content
+    }
+}
+
+@mixin xl {
+    @media(min-width: 1200px) and (max-width: 1399.98px) {
+        @content
+    }
+}
+
+@mixin xxl {
+    @media (min-width: 1400px) {
+        @content
+    }
+}
+ */

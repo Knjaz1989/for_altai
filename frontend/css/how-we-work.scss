@@ -1,0 +1,138 @@
+@import "typography";
+@import './media.scss';
+
+.howWeWork {
+  text-align: center;
+  margin-bottom: 90px;
+
+  @media(min-width:320px) and (max-width:767.98px) {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    @include font-roboto-bold-48;
+    color: $color-text;
+    margin-bottom: 60px;
+
+    @media(min-width:320px) and (max-width:767.98px) {
+      font-size: 2.4em;
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    @include font-roboto-reg-20;
+    color: $color-text;
+  }
+
+  &__wrap {
+    display: flex;
+    margin-bottom: 80px;
+
+    @media (max-width: 991.98px) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 992px) {
+      justify-content: space-around;
+    }
+  }
+
+  &__item {
+    @media (max-width: 992px) {
+      &:nth-child(n+2) {
+        margin-top: 40px; // Проверить
+      }
+    }
+
+    &_container-outer {
+      width: 340px;
+      height: 116px;
+      border-radius: 56px;
+      border: 3px solid $color-border;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_container-inner {
+      position: relative;
+      width: 320px;
+      height: 102px;
+      border-radius: 50px;
+      border: 2px solid $color-border;
+      display: flex;
+      align-items: center;
+      padding-left: 100px;
+    }
+
+    &_number {
+      position: absolute;
+      top: -1px;
+      left: -2px;
+      width: 100px;
+      height: 100px;
+
+      border-radius: 50px;
+      border: 2px solid $color-border;
+      background-color: $color-checkbox;
+
+      display: block;
+      font-size: 61px; // временно
+      text-align: center;
+
+      @include font-roboto-reg-20;
+      font-size: 61px;
+      color: $color-border;
+    }
+
+    &_content {
+      text-align: left;
+      margin-left: 9px;
+
+      p {
+        line-height: 119%;
+      }
+
+      &_list {
+        margin-top: 9px;
+        font-size: 20px;
+        column-count: 2;
+      }
+
+      &_list>li {
+        @include font-roboto-reg-14;
+        font-size: 14px;
+        margin-left: 3px;
+      }
+
+      &_list_flat {
+        margin-top: 9px;
+        font-size: 20px;
+        display: flex;
+      }
+
+      &_list_flat>li {
+        @include font-roboto-reg-14;
+        font-size: 14px;
+        margin-left: 3px;
+      }
+
+      &_list_flat>li:nth-child(n+2) {
+        margin-left: 14px;
+      }
+    }
+  }
+
+  button {
+    @include button-blue;
+
+    @media(min-width:320px) and (max-width:767.98px) {
+      max-width: 300px;
+      padding: 20px 60px;
+    }
+
+  }
+}

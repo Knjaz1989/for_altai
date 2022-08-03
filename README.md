@@ -7,6 +7,5 @@
 ```c
 git clone git@github.com:CrowMEV/netology-translation-agency.git app
 cd app
-docker build -t altai .
-docker run -it -d -p 80:80 --name=altai --restart=always altai
+docker-compose up -d
 ```

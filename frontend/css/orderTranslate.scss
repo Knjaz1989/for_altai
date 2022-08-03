@@ -1,0 +1,132 @@
+@import "./typography.scss";
+@import './media.scss';
+
+
+.orderTranslate {
+
+    background-repeat: no-repeat;
+    background-size: cover; // ставим cover
+    background-position: center; // центрируем
+    max-width: 1920px;
+    height: 646px; // зафиксировать для каждого диапазона
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+
+    @media (min-width:576px) {
+
+        background-image: url('../img/backTranslate.jpg');
+    }
+
+    // ! Явно не хватает ещё одной картинки на промежуточные от 992 до 576. А то рожи совсем обрубает им.
+    // + нужно для малых диапазонов выставить шрифты и будет ок.
+
+    @media (min-width: 320px) and (max-width: 575.98px) {
+        height: 300px; // фиксируем 300
+        background-image: url('../img/backTranslate-small.jpg');
+    }
+
+
+
+    &__wrap {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+
+
+        @media(min-width: 992px) and (max-width: 1199.99px) {
+            max-width: 960px;
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            max-width: 720px;
+        }
+
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            max-width: 540px;
+            align-items: flex-start;
+        }
+
+
+        @media (min-width: 421px) and (max-width: 575.98px) {
+            max-width: 420px;
+            align-items: flex-start;
+        }
+
+        @media (min-width: 320px) and (max-width: 420.98px) {
+            max-width: 320px;
+            padding: 0 10px;
+            align-items: flex-start;
+        }
+
+
+
+    }
+
+    h1 {
+        @include font-roboto-bold-48;
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 20px;
+
+        @media(min-width:768px) and (max-width:991.98px) {
+            font-size: 3.7em;
+        }
+
+        @media(min-width:768px) and (max-width:991.98px) {
+            font-size: 3.4em;
+        }
+
+        @media(min-width:320px) and (max-width:767.98px) {
+            font-size: 2.7em;
+            line-height: 115%;
+            text-align: left;
+        }
+    }
+
+    p {
+        @include font-roboto-reg-22;
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 70px;
+
+        @media(min-width:992px) {
+            font-size: 3.2rem;
+
+        }
+
+        @media(min-width:768px) and (max-width:991.98x) {
+            font-size: 2.7em;
+            margin-bottom: 50px;
+        }
+
+        @media(min-width:320px) and (max-width:767.98px) {
+            font-size: 1.4em;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+    }
+
+    button {
+        @include button-white;
+
+        @media(min-width:500px) and (max-width:767.98px) {
+            max-width: 300px;
+            padding: 15px 50px;
+        }
+
+        @media(min-width:320px) and (max-width:499.98px) {
+            max-width: 250px;
+            padding: 10px 30px;
+        }
+    }
+}

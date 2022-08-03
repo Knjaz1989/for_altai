@@ -1,0 +1,155 @@
+@import "./typography.scss";
+@import './media.scss';
+
+
+.header__burger_icon {
+    @media(min-width:768px) {
+        display: none;
+    }
+
+    @media(min-width: 320px) and (max-width: 767.98px) {
+        border: 1px solid #022033;
+        border-radius: 7px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        width: 35px;
+        height: 35px;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+
+        span {
+            width: 26px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #222222;
+            transition: all 0.5s;
+        }
+
+        span:nth-of-type(2) {
+            top: calc(50% - 5px);
+        }
+
+        span:nth-of-type(3) {
+            top: calc(50% + 5px);
+        }
+    }
+}
+
+.header__burger_close {
+    @media(min-width:768px) {
+        display: none;
+    }
+
+    @media(min-width: 320px) and (max-width: 767.98px) {
+        border: 1px solid #022033;
+        border-radius: 7px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        right: 0%;
+        transform: translate(-50%, 50%);
+        z-index: 2;
+        overflow: hidden;
+
+        span {
+            width: 26px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #222222;
+            transition: all 0.5s;
+        }
+
+        span:nth-of-type(1) {
+            display: none;
+        }
+
+        span:nth-of-type(2) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(45deg);
+        }
+
+        span:nth-of-type(3) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(-45deg);
+        }
+    }
+}
+
+
+
+
+.header__burger {
+    @media(min-width:200px) {
+        display: none;
+    }
+
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    padding: 75px;
+    background: #EEF1F6;
+    border: 1px solid #0B527D;
+    transform: translate(-100%, 0px);
+    transition: transform 0.5s;
+
+    &_menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        li:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        a {
+            @include font-roboto-reg-14;
+            color: $color-text;
+            padding: 10px 0;
+        }
+    }
+
+}
+
+
+.active {
+    position: fixed;
+    transform: translate(0px, 0px);
+    display: flex;
+    transition: transform 0.5s;
+}
+
+
+
+
+
+/* Меняем гамбургер иконку, когда меню открыто */
+/* .menu-btn.active span:nth-of-type(1) {
+    display: none;
+  }
+  .menu-btn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);  
+  }
+  .menu-btn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg); 
+  }
+  А теперь в js коде сделаем переключатель, как мы ранее делали для меню. Только теперь сделаем для «иконки». Получится вот так:
+  
+  let menuBtn = document.querySelector('.menu-btn');
+  let menu = document.querySelector('.menu');
+  menuBtn.addEventListener('click', function(){
+      menuBtn.classList.toggle('active');
+      menu.classList.toggle('active');
+  }) */
